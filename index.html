@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Mon curriculum vitae : présentation de mes compétences, de mon parcours et de mes réalisations">
     
-    <title>Mon curriculum vitae</title>    
+    <title>Thomas Ghaye</title>    
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="icon" href="favicon.ico">
@@ -25,24 +25,24 @@
 
   </head>
   
-  <body>
+  <body data-spy="scroll" data-target=".navbar">
     <!--[if lt IE 8]>
       <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
    <header>
-      <nav class="navbar navbar-fixed-top">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle">
               <span class="fa fa-bars"></span>
             </button>
-            <img src="tile.png" class="navbar-brand" title="Logo" alt="Logo">
+            <img src="img/gravatar.png" class="navbar-brand" title="Logo" alt="Logo">
           </div>
 
           <div class="collapse navbar-collapse">   
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#civil"><span class="fa fa-home"></span></a></li>
+              <li class="active"><a href="#start"><span class="fa fa-home"></span></a></li>
               <li><a href="#cursus">Cursus</a></li>
               <li><a href="#jobs">Emplois antérieurs</a></li>
               <li><a href="#skills">Compétences</a></li>
@@ -55,17 +55,15 @@
       </nav>
     </header>
     
-    <div class="container">
-      <section id="civil">
-        <h1>Pour mieux me connaître</h1>
-        <ul>
-          <li>Nom : Thomas GHAYE</li>
-          <li>Date de naissance : 8 octobre 1983</li>
-          <li>Résidence : Esneux, Belgique</li>
+    <div class="container-fluid">
+      <section id="start" class="text-center">
+        <h1>Thomas GHAYE</h1>
+        <h2>8 octobre 1983</h2>
+        <h2>Esneux, Belgique</h2>
         </ul>
       </section>
-
-      <section id="cursus">
+    </div>
+      <section id="cursus" class="jumbotron">
         <h2><span class="fa fa-graduation-cap"></span> Etudes</h2>
         <ul>
           <li>2006-2008 : Master en archéométrie à l’Université de Liège</li>
@@ -73,16 +71,14 @@
         </ul>
       </section>
 
-      <section id="jobs">
+      <section id="jobs" class="jumbotron">
         <h2><span class="fa fa-briefcase"></span> Expériences professionnelles</h2>
         <ul>
           <li>Actuel : Responsable des systèmes d’informations chez Sanidel Namur S.A.</li>
           <li>2008–2014 : Responsable des systèmes d’informations chez Sanidel S.A.</li>
         </ul>
       </section>
-    </div>
-    
-    <div class="container-fluid">
+
       <section id="skills" class="jumbotron">
         <h2>Compétences</h2>
         <h3><span class="fa fa-flag"></span> Langues</h3>
@@ -102,47 +98,53 @@
         </ul>
       </section>
       <section id="portfolio" class="jumbotron">Lorem Ipsum</section>
-    </div>
     
-    <div class="container">
-      <section id="divers">
-        <h2>Atouts</h2>
-        <ul>
-          <li>Permis B</li>
-          <li>Possède un véhicule</li>
-          <li>Autodidacte</li>
-          <li>Consciencieux</li>
-          <li>Capable d’analyser les situations</li>
-          <li>Capable d’informer les autres</li>
-        </ul>
-
-        <h2>Loisirs</h2>
-        <ul>
-          <li>Informatique</li>
-          <li>Echecs</li>
-          <li>Jeux de rôle</li>
-          <li>Jeux de société</li>
-          <li>Marche</li>
-          <li>Vélo</li>
-        </ul>
+      <section id="divers" class="jumbotron row">
+        <div class="col-lg-6">
+          <h2>Atouts</h2>
+          <ul>
+            <li>Permis B</li>
+            <li>Possède un véhicule</li>
+            <li>Autodidacte</li>
+            <li>Consciencieux</li>
+            <li>Capable d’analyser les situations</li>
+            <li>Capable d’informer les autres</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <h2>Loisirs</h2>
+          <ul>
+            <li>Informatique</li>
+            <li>Echecs</li>
+            <li>Jeux de rôle</li>
+            <li>Jeux de société</li>
+            <li>Marche</li>
+            <li>Vélo</li>
+          </ul>
+        </div>
       </section>
       
       <section id="contact" class="jumbotron row">
-        <h2>Me contacter</h2>
-        <div class="col-lg-4">
-          <a href="https://twitter.com/ThomasGhaye" target="new">
-            <span class="fa fa-twitter"></span> @thomasghaye
-          </a>
-        </div>
-        <div class="col-lg-4">
-          <a href="be.linkedin.com/in/tghaye" target="new">
-            <span class="fa fa-linkedin"></span> Thomas Ghaye
-          </a>
-        </div>
-        <div class="col-lg-4">
-          <a href="mailto:moc.liamtoh@eyahgsamoht">
-            <span class="fa fa-envelope"></span> thomasghaye@hotmail.com
-          </a>
+        <div class="col-lg-12 row">
+          <h2>Me contacter</h2>
+          <div class="col-lg-4">
+            <a href="https://twitter.com/ThomasGhaye" target="_blank">
+              <span class="fa fa-twitter"></span> @thomasghaye
+            </a><br>
+            <a href="be.linkedin.com/in/tghaye" target="_blank">
+              <span class="fa fa-linkedin"></span> Thomas Ghaye
+            </a>
+          </div>
+          <div class="col-lg-4">
+            <a href="https://github.com/Sylvebois" target="_blank">
+              <span class="fa fa-github"></span> Sylvebois
+            </a>
+          </div>
+          <div class="col-lg-4">
+            <a href="mailto:moc.liamtoh@eyahgsamoht">
+              <span class="fa fa-envelope"></span> thomasghaye@hotmail.com
+            </a>
+          </div>
         </div>
       </section>
       
@@ -151,7 +153,7 @@
           <p>Réalisé en HTML5, CSS3 et JavaScript</p>  
         </div>    
       </footer>
-    </div>
+
     
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>');</script>
