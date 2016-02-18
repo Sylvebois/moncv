@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Signika);    
 
 body {
-    background: url('../img/') no-repeat center center fixed;
+    background: url('../img/bg.svg') no-repeat center center fixed;
     background-size: cover;
     
     font-family: Signika, sans-serif;
@@ -15,9 +15,4 @@ header {
 .jumbotron {
     padding-left: 15px;
     padding-right: 15px;
-}
-
-#svgBackground {
-    position: absolute;
-    left: 0;
 }
