@@ -1,5 +1,6 @@
 // Scrollspy fluide
-$(function () {   
+$(function () {  
+    checkModal();
     displayStart();
     applyResize();
     scrollSpy();
@@ -55,4 +56,20 @@ function modMailTo() {
 
         $(this).attr('href', 'mailto:' + mail);
     });
+}
+
+/*
+ * Gestion de la fenêtre modale
+ */
+
+//Vérifie si la fenêtre a déjà été ouverte
+function checkModal() {
+//    $(window).load(function(){
+//        $('#modalForm').modal('show');
+//    });
+}
+
+//Gestion des événements dans la fenêtre
+function manageModal() {
+    
 }
