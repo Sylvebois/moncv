@@ -1,96 +1,123 @@
-<div class="modal-header">
-  <button type="button" class="close" data-dismiss="modal">&times;</button>
-  <h2>Compétences</h2>
-</div>
-<div class="modal-body">
-  <form class="well">
-    <legend>Quelles compétences souhaitez-vous que votre candidat possèdent ?</legend>
-    <h3>Informatique</h3>
-    <fieldset>
-      <div class="col-lg-6">
-        <h4>Suite Office</h4>
-        <div class="checkbox">
-          <label for="word" class="checkbox">
-            <input type="checkbox" name="office" value="word" id="word" checked>
-            Word
-          </label>
-          <label for="excel" class="checkbox">
-            <input type="checkbox" name="office" value="excel" id="excel" checked>
-            Excel
-          </label>
-          <label for="powerpoint" class="checkbox">
-            <input type="checkbox" name="office" value="powerpoint" id="powerpoint" checked>
-            Powerpoint
-          </label>
-          <label for="publisher" class="checkbox">
-            <input type="checkbox" name="office" value="publisher" id="publisher" checked>
-            Publisher
-          </label>
+<div id="form1">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h2>Compétences</h2>
+  </div>
+  <div class="modal-body">
+    <form class="well">
+      <legend>Quelles compétences souhaitez-vous que votre candidat possèdent ?</legend>
+      <h3>Informatique</h3>
+      <fieldset>
+        <div class="col-lg-6">
+          <h4>Suite Office</h4>
+          <div class="checkbox">
+            <label for="word" class="checkbox">
+              <input type="checkbox" name="office" value="word" id="word" checked>
+              Word
+            </label>
+            <label for="excel" class="checkbox">
+              <input type="checkbox" name="office" value="excel" id="excel" checked>
+              Excel
+            </label>
+            <label for="powerpoint" class="checkbox">
+              <input type="checkbox" name="office" value="powerpoint" id="powerpoint" checked>
+              Powerpoint
+            </label>
+            <label for="publisher" class="checkbox">
+              <input type="checkbox" name="office" value="publisher" id="publisher" checked>
+              Publisher
+            </label>
+          </div>
+
+          <h4>Dessin</h4>
+          <div class="checkbox">
+            <label for="gimp" class="checkbox">
+              <input type="checkbox" name="dessin" value="gimp" id="gimp" checked>
+              Gimp 
+            </label>
+            <label for="blender" class="checkbox">
+              <input type="checkbox" name="dessin" value="blender" id="blender" checked>
+              Blender
+            </label>
+          </div>
+
+          <h4>Gestion commerciale</h4>
+          <div class="checkbox">
+            <label for="mercator" class="checkbox">
+              <input type="checkbox" name="gescom" value="mercator" id="mercator" checked>
+              Mercator 
+            </label>
+          </div>    
         </div>
 
-        <h4>Dessin</h4>
-        <div class="checkbox">
-          <label for="gimp" class="checkbox">
-            <input type="checkbox" name="dessin" value="gimp" id="gimp" checked>
-            Gimp 
-          </label>
-          <label for="blender" class="checkbox">
-            <input type="checkbox" name="dessin" value="blender" id="blender" checked>
-            Blender
-          </label>
+        <div class="col-lg-6">
+          <h4>Programmation</h4>
+          <div class="checkbox">
+            <label for="html" class="checkbox">
+              <input type="checkbox" name="programmation" value="html" id="html" checked>
+              HTML
+            </label>
+            <label for="css" class="checkbox">
+              <input type="checkbox" name="programmation" value="css" id="css" checked>
+              CSS
+            </label>
+            <label for="js" class="checkbox">
+              <input type="checkbox" name="programmation" value="js" id="js" checked>
+              JavaScript
+            </label>
+            <label for="php" class="checkbox">
+              <input type="checkbox" name="programmation" value="php" id="php" checked>
+              PHP
+            </label>
+            <label for="cplusplus" class="checkbox">
+              <input type="checkbox" name="programmation" value="cplusplus" id="cplusplus" checked>
+              C++
+            </label>
+          </div>
+
+          <h4>Gestion de contenu</h4>
+          <div class="checkbox">
+            <label for="drupal" class="checkbox">
+              <input type="checkbox" name="cms" value="drupal" id="drupal" checked>
+              Drupal  
+            </label>
+            <label for="catbuilder" class="checkbox">
+              <input type="checkbox" name="cms" value="catbuilder" id="catbuilder" checked>
+              CatBuilder
+            </label>
+          </div>   
         </div>
+      </fieldset>
 
-        <h4>Gestion commerciale</h4>
-        <div class="checkbox">
-          <label for="mercator" class="checkbox">
-            <input type="checkbox" name="gescom" value="mercator" id="mercator" checked>
-            Mercator 
-          </label>
-        </div>    
-      </div>
+      <hr>
 
-      <div class="col-lg-6">
-        <h4>Programmation</h4>
-        <div class="checkbox">
-          <label for="html" class="checkbox">
-            <input type="checkbox" name="programmation" value="html" id="html" checked>
-            HTML
-          </label>
-          <label for="css" class="checkbox">
-            <input type="checkbox" name="programmation" value="css" id="css" checked>
-            CSS
-          </label>
-          <label for="js" class="checkbox">
-            <input type="checkbox" name="programmation" value="js" id="js" checked>
-            JavaScript
-          </label>
-          <label for="php" class="checkbox">
-            <input type="checkbox" name="programmation" value="php" id="php" checked>
-            PHP
-          </label>
-          <label for="cplusplus" class="checkbox">
-            <input type="checkbox" name="programmation" value="cplusplus" id="cplusplus" checked>
-            C++
-          </label>
+      <h3>Langue</h3>
+      <fieldset>
+        <div class="col-lg-6">
+          <div class="checkbox">
+            <label for="fr" class="checkbox">
+              <input type="checkbox" name="langue" value="fr" id="fr" checked>
+              Français
+            </label>
+            <label for="nl" class="checkbox">
+              <input type="checkbox" name="langue" value="nl" id="nl" checked>
+              Néerlandais
+            </label>
+            <label for="en" class="checkbox">
+              <input type="checkbox" name="langue" value="en" id="en" checked>
+              Anglais
+            </label>
+            <label for="de" class="checkbox">
+              <input type="checkbox" name="langue" value="de" id="de" checked>
+              Allemand
+            </label>
+          </div>
         </div>
-
-        <h4>Gestion de contenu</h4>
-        <div class="checkbox">
-          <label for="drupal" class="checkbox">
-            <input type="checkbox" name="cms" value="drupal" id="drupal" checked>
-            Drupal  
-          </label>
-          <label for="catbuilder" class="checkbox">
-            <input type="checkbox" name="cms" value="catbuilder" id="catbuilder" checked>
-            CatBuilder
-          </label>
-        </div>   
-      </div>
-    </fieldset>
-    
-  </form>
-</div>
-<div class="modal-footer text-right">
-  <button type="button" id="formPrev" class="btn btn-primary">Précédent</button>
-  <button type="button" id="formNext" class="btn btn-primary">Suivant</button>
+      </fieldset>
+    </form>
+  </div>
+  <div class="modal-footer text-right">
+    <button type="button" id="formPrev" class="btn btn-primary">Précédent</button>
+    <button type="button" id="formNext" class="btn btn-primary">Suivant</button>
+  </div>
 </div>
