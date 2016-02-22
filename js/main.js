@@ -111,7 +111,7 @@ function manageModal() {
     });
     $('#modalForm').on('click','#form3 #formNext',function(){
         loadForm('form_fin');
-        setTimeout(showResult(), 2000);
+        setTimeout(showResult, 2000);
    });
    
    //Fin
@@ -129,6 +129,7 @@ function manageModal() {
    });
 }
 
+//Affichage d'un résultat sur la dernière fenêtre modale
 function showResult() {
     $('.modal-header h2:first-of-type').addClass('hidden');
     $('.modal-header h2:last-of-type').removeClass('hidden');
@@ -139,6 +140,7 @@ function showResult() {
     $('#formEnd').removeClass('disabled');
 }
 
+//Chargement d'une page dans la fenêtre modale
 function loadForm(nom) {
     $('.modal-dialog').empty();
     $('.modal-dialog').load('./includes/'+nom+'.html');    
