@@ -4,29 +4,84 @@ $(function () {
     scrollSpy();
     modMailTo();
     checkModal();
+    createSVG();
 });
 
 
 /*
  * Dimensionnement de l'accueil
  */
+
+//Mise en place de départ
 function displayStart() {
     var startHeight = $(window).height() - $('header nav').height();
     
     $('#start section').css({ height: startHeight + 'px' });
     $('#start section div').css({ 
         position: 'relative', 
-        top:($(window).height()/3) + 'px' 
+        top:($(window).height()/3) + 'px',
+        'margin-bottom': '15px'
     });
 }
 
-/*
- * Redimensionnement de l'accueil en cas de changement de la taille d'écran
- */
+// Redimensionnement de l'accueil en cas de changement de la taille d'écran
 function applyResize() {
     $(window).on('resize', function() { 
         displayStart();
+        createSVG();
     }); 
+}
+
+//Création du svg
+function createSVG() {
+    var largeur = $(window).width();
+    var hauteur = $(window).height();
+    
+    $('#bg').empty();
+    $('#bg').width(largeur);
+    $('#bg').height(hauteur);
+    
+    var startXY = 10;
+    var endXY = (largeur > hauteur)? largeur : hauteur;
+    
+    for(var i = 0; i <= endXY; i += 10) {
+        var line1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line1.setAttribute('x1', 0);
+        line1.setAttribute('y1', startXY+i);
+        line1.setAttribute('x2', endXY-i);
+        line1.setAttribute('y2', 0);
+        line1.setAttribute('stroke', 'rgb(' + randIntIncl(0,255) + ',' + randIntIncl(0,100) + ',' + randIntIncl(0,1) + ')');
+        line1.setAttribute('stroke-width',1);
+        
+        var line2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line2.setAttribute('x1', endXY);
+        line2.setAttribute('y1', i);
+        line2.setAttribute('x2', endXY-i);
+        line2.setAttribute('y2', endXY);
+        line2.setAttribute('stroke', 'rgb(' + randIntIncl(0,255) + ',' + randIntIncl(0,1) + ',' + randIntIncl(0,100) + ')');
+        line2.setAttribute('stroke-width',1);
+        
+        var line3 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line3.setAttribute('x1', i);
+        line3.setAttribute('y1', 0);
+        line3.setAttribute('x2', endXY);
+        line3.setAttribute('y2', i);
+        line3.setAttribute('stroke', 'rgb(' + randIntIncl(0,1) + ',' + randIntIncl(0,100) + ',' + randIntIncl(0,255) + ')');
+        line3.setAttribute('stroke-width',1);
+        
+        var line4 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line4.setAttribute('x1', 0);
+        line4.setAttribute('y1', i);
+        line4.setAttribute('x2', startXY+i);
+        line4.setAttribute('y2', endXY);
+        line4.setAttribute('stroke', 'rgb(' + randIntIncl(0,100) + ',' + randIntIncl(0,255) + ',' + randIntIncl(0,1) + ')');
+        line4.setAttribute('stroke-width',1);
+        
+        $('#bg').append(line1);
+        $('#bg').append(line2);
+        $('#bg').append(line3);
+        $('#bg').append(line4);
+    }  
 }
 
 /*
@@ -144,4 +199,13 @@ function showResult() {
 function loadForm(nom) {
     $('.modal-dialog').empty();
     $('.modal-dialog').load('./includes/'+nom+'.html');    
+}
+
+/*
+ * Divers
+ */
+
+//Génération d'un nombre aléatoire
+function randIntIncl(min, max) {
+  return Math.floor(Math.random() * (max - min +1)) + min;
 }
