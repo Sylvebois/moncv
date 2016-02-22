@@ -1,15 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Signika);    
 
 body {
-    //background: url('../img/bg2.svg') no-repeat center center fixed;
-    //background-size: cover;
+    background: url('../img/pattern.svg') no-repeat center center fixed;
+    background-size: cover;
     
     font-family: Signika, sans-serif;
     font-size: 1.7em;
-}
-
-header {
-    margin-bottom: 60px;
 }
 
 form h4 {
@@ -29,12 +25,22 @@ form h4 {
     border: solid 1px rgba(0,0,0,0.2);
 }
 
+/*
+ * Positionnement du background pour l'accueil
+ */
+
 #bg {
     position:absolute;
     top: 0;
     left:0;
     bottom: 0;
     right:0;
+}
+
+#start {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 30px;
 }
 
 #start section {

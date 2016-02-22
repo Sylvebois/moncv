@@ -13,14 +13,11 @@ $(function () {
  */
 
 //Mise en place de départ
-function displayStart() {
-    var startHeight = $(window).height() - $('header nav').height();
-    
-    $('#start section').css({ height: startHeight + 'px' });
+function displayStart() {    
+    $('#start section').css({ height: $(window).height() + 'px' });
     $('#start section div').css({ 
         position: 'relative', 
         top:($(window).height()/3) + 'px',
-        'margin-bottom': '15px'
     });
 }
 
