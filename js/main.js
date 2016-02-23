@@ -5,6 +5,7 @@ $(function () {
     modMailTo();
     checkModal();
     createSVG();
+    diapo();
 });
 
 
@@ -107,18 +108,6 @@ function scrollSpy() {
 }
 
 /*
- * Modifie l'adresse mail
- */
-function modMailTo() {
-    $('a[href^="mailto:"]').on('click', function(e) {
-        var mail = $(this).attr('href').replace('mailto:', '');
-        mail = mail.split('').reverse().join('');
-
-        $(this).attr('href', 'mailto:' + mail);
-    });
-}
-
-/*
  * Gestion de la fenêtre modale
  */
 
@@ -215,10 +204,40 @@ function loadForm(nom) {
 }
 
 /*
+ * Gestion du carrousel
+ */
+function diapo() {
+    var nbDiapo = $('#portfolio .carousel .item').length;
+
+    $('.carousel').on('slid.bs.carousel', function(){
+        var tmpId = $('#portfolio .carousel .active').attr('id');
+        tmpId = tmpId.substring(3);
+        
+        if(tmpId === '1') {
+            $('#text'+nbDiapo).addClass('hide');
+        }
+        else {
+            $('#text'+(tmpId-1)).addClass('hide');
+        }
+        
+        $('#text'+tmpId).removeClass('hide');
+    });
+}
+/*
  * Divers
  */
 
 //Génération d'un nombre aléatoire
 function randIntIncl(min, max) {
   return Math.floor(Math.random() * (max - min +1)) + min;
+}
+
+//Modifie l'adresse mail
+function modMailTo() {
+    $('a[href^="mailto:"]').on('click', function(e) {
+        var mail = $(this).attr('href').replace('mailto:', '');
+        mail = mail.split('').reverse().join('');
+
+        $(this).attr('href', 'mailto:' + mail);
+    });
 }
