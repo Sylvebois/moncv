@@ -38,57 +38,56 @@ function createSVG() {
     $('#bg').width(largeur);
     $('#bg').height(hauteur);
     
-    var startXY = 10;
-    var endXY = (largeur > hauteur)? largeur : hauteur;
+    svgBasic(largeur, hauteur);
+}
+
+//svg de base
+function svgBasic(w, h){
+    var nbLignes = (w > h)? Math.floor(h/10) : Math.floor(w/10);
+    var pasH = h/nbLignes;
+    var pasW = w/nbLignes;
     
-    for(var i = 0; i <= endXY; i += 10) {
+    var startXY = 10;
+    var endXY = (w > h)? w/2 : h/2;
+    
+    for(var i = 0; i <= nbLignes; i++) {
         var line1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
-        line1.setAttribute('x1', 0);
-        line1.setAttribute('y1', startXY+i);
-        line1.setAttribute('x2', endXY-i);
-        line1.setAttribute('y2', 0);
-        line1.setAttribute('stroke', 'rgb(' + randIntIncl(0,255) + ',' + randIntIncl(0,100) + ',' + randIntIncl(0,1) + ')');
+        line1.setAttribute('x1', i*pasW);
+        line1.setAttribute('y1', 0);
+        line1.setAttribute('x2', w);
+        line1.setAttribute('y2', i*pasH);
+        line1.setAttribute('stroke', 'rgb(' + randIntIncl(0,100) + ',' + randIntIncl(0,255) + ',' + randIntIncl(0,1) + ')');
         line1.setAttribute('stroke-width',1);
         
         var line2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
-        line2.setAttribute('x1', endXY);
-        line2.setAttribute('y1', i);
-        line2.setAttribute('x2', endXY-i);
-        line2.setAttribute('y2', endXY);
+        line2.setAttribute('x1', 0);
+        line2.setAttribute('y1', i*pasH);
+        line2.setAttribute('x2', w-(pasW*i));
+        line2.setAttribute('y2', 0);
         line2.setAttribute('stroke', 'rgb(' + randIntIncl(0,255) + ',' + randIntIncl(0,1) + ',' + randIntIncl(0,100) + ')');
         line2.setAttribute('stroke-width',1);
         
         var line3 = document.createElementNS("http://www.w3.org/2000/svg", "line");
-        line3.setAttribute('x1', i);
-        line3.setAttribute('y1', 0);
-        line3.setAttribute('x2', endXY);
-        line3.setAttribute('y2', i);
+        line3.setAttribute('x1', 0);
+        line3.setAttribute('y1', h-(pasH*i));
+        line3.setAttribute('x2', w-(pasW*i));
+        line3.setAttribute('y2', h);
         line3.setAttribute('stroke', 'rgb(' + randIntIncl(0,1) + ',' + randIntIncl(0,100) + ',' + randIntIncl(0,255) + ')');
         line3.setAttribute('stroke-width',1);
-        
+                
         var line4 = document.createElementNS("http://www.w3.org/2000/svg", "line");
-        line4.setAttribute('x1', 0);
-        line4.setAttribute('y1', i);
-        line4.setAttribute('x2', startXY+i);
-        line4.setAttribute('y2', endXY);
-        line4.setAttribute('stroke', 'rgb(' + randIntIncl(0,100) + ',' + randIntIncl(0,255) + ',' + randIntIncl(0,1) + ')');
+        line4.setAttribute('x1', pasW*i);
+        line4.setAttribute('y1', h);
+        line4.setAttribute('x2', w);
+        line4.setAttribute('y2', h-(pasH*i));
+        line4.setAttribute('stroke', 'rgb(' + randIntIncl(0,255) + ',' + randIntIncl(0,100) + ',' + randIntIncl(0,1) + ')');
         line4.setAttribute('stroke-width',1);
-        
+
         $('#bg').append(line1);
         $('#bg').append(line2);
         $('#bg').append(line3);
         $('#bg').append(line4);
     }  
-}
-
-//svg de base
-function svgLines(){
-    
-}
-
-//svg pour les petits écrans
-function svgPoly() {
-    
 }
 
 /*
