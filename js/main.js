@@ -17,7 +17,7 @@ function displayStart() {
     $('#start section').css({ height: $(window).height() + 'px' });
     $('#start section div').css({ 
         position: 'relative', 
-        top:($(window).height()/3) + 'px',
+        top:($(window).height()/3) + 'px'
     });
 }
 
@@ -81,6 +81,16 @@ function createSVG() {
     }  
 }
 
+//svg de base
+function svgLines(){
+    
+}
+
+//svg pour les petits écrans
+function svgPoly() {
+    
+}
+
 /*
  * Scrollspy fluide
  */
@@ -125,6 +135,13 @@ function checkModal() {
             
             //Chargement de la fenêtre
             $('.modal-dialog').load('./includes/form_accueil.html');
+            $('.modal-dialog').css({
+                'background-color': 'rgb(255,255,255)',
+                'border-radius': '6px',
+                'box-shadow': 'rgba(0,0,0,0.5) 0px 5px 15px 0px',
+                'border': 'solid 1px rgba(0,0,0,0.2)'
+            });
+            
             $('#modalForm').modal('show');
         }); 
     }

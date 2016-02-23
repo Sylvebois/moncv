@@ -17,18 +17,9 @@ form h4 {
     padding-right: 15px;
 }
 
-//Corrige le fond transparent quand on charge la fenêtre à l'ouverture de la page
-.modal-dialog {
-    background-color: rgb(255,255,255);
-    border-radius: 6px;
-    box-shadow: rgba(0,0,0,0.5) 0px 5px 15px 0px;
-    border: solid 1px rgba(0,0,0,0.2);
-}
-
 /*
  * Positionnement du background pour l'accueil
  */
-
 #bg {
     position:absolute;
     top: 0;
