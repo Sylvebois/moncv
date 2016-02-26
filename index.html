@@ -27,7 +27,10 @@
   
   <body data-spy="scroll" data-target=".navbar">
     <!--[if lt IE 8]>
-      <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <div class="alert alert-warning fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      </div>
     <![endif]-->
 
    <header>
@@ -96,26 +99,76 @@
         <ul>
           <li>Bureautique : Word, Excel, Powerpoint, Access, Publisher</li>
           <li>Dessin : Gimp, Blender</li>
-          <li>Gestion de contenu : Drupal, CatBuilder</li>
           <li>Programmation : HTML, CSS, JavaScript, PHP, C++</li>
+          <li>Gestion de contenu : Drupal, CatBuilder</li>
+          <li>Gestion de version : Git</li>
           <li>Gestion commerciale : Mercator</li>
         </ul>
       </section>
       
       <section id="portfolio" class="jumbotron">
         <div class="row">
-          <div class="carousel slide col-lg-6" data-ride="carousel">
+          <div class="carousel slide col-lg-6" data-ride="carousel" id="carousel">
             <div class="carousel-inner">
-              <div class="item active" id="img1"><img src="img/casse-briques.jpg" alt="casse-briques" title="Un jeu de casse-briques"></div>
-                <div class="item" id="img2"><img src="img/game_of_life.jpg" alt="game of life" title="Le jeu de la vie de Conway"></div>
-                <div class="item" id="img3"><img src="img/rpg.png" alt="rpg" title="Un petit jeu de rôle"></div>
-                <div class="item" id="img4"><img src="img/mariage.jpg" alt="site mariage" title="Le site de mon mariage"></div>
-                <div class="item" id="img5"><img src="img/old_sanidel.jpg" alt="ancien site sanidel" title="L'ancien site de sanidel Marche"></div>
-                <div class="item" id="img6"><img src="img/new_sanidel.jpg" alt="nouveau site sanidel" title="Le projet de nouveau site de sanidel Marche"></div>
-                <div class="item" id="img7"><img src="img/custom_drupal_mod.jpg" alt="module drupal" title="Un module pour Drupal 7"></div>
-                <div class="item" id="img8"><img src="img/sanidel_eu.jpg" alt="site e-commerce sanidel" title="Le site B2B de sanidel Namur"></div>
-                <div class="item" id="img9"><img src="img/miellerie.jpg" alt="site miellerie rochefort" title="Le site du cercle apicole de Rochefort"></div>
+              <div class="item active" id="img1">
+                <a href="realisations/breakout" target="_blank">
+                  <img src="img/casse-briques.jpg" alt="casse-briques" title="Un jeu de casse-briques">
+                </a>
+              </div>
+              <div class="item" id="img2">
+                <a href="realisations/gol" target="_blank">
+                  <img src="img/game_of_life.jpg" alt="game of life" title="Le jeu de la vie de Conway">
+                </a>
+              </div>
+              <div class="item" id="img3">
+                <a href="realisations/myfirstrpg" target="_blank">
+                  <img src="img/rpg.png" alt="rpg" title="Un petit jeu de rôle">
+                </a>
+              </div>
+              <div class="item" id="img4">
+                <a href="http://users.skynet.be/fc350570" target="_blank">
+                  <img src="img/mariage.jpg" alt="site mariage" title="Le site de mon mariage">
+                </a>
+              </div>
+              <div class="item" id="img5">
+                <a href="http://www.sanidel.com/" target="_blank">
+                  <img src="img/old_sanidel.jpg" alt="ancien site sanidel" title="L'ancien site de sanidel Marche">
+                </a>
+              </div>
+              <div class="item" id="img6">
+                <a href="http://dev.sanidel.com" target="_blank">
+                  <img src="img/new_sanidel.jpg" alt="nouveau site sanidel" title="Le projet de nouveau site de sanidel Marche">
+                </a>
+              </div>
+              <div class="item" id="img7">
+                <a href="http://dev.sanidel.com/soltherm_calculator" target="_blank">
+                  <img src="img/custom_drupal_mod.jpg" alt="module drupal" title="Un module pour Drupal 7">
+                </a>
+              </div>
+              <div class="item" id="img8">
+                <a href="http://comerce.sanidel.com" target="_blank">
+                  <img src="img/sanidel_eu.jpg" alt="site e-commerce sanidel" title="Le site B2B de sanidel Namur">
+                </a>
+              </div>
+              <div class="item" id="img9">
+                <a href="http://cercleapicolederochefort.be" target="_blank">
+                  <img src="img/miellerie.jpg" alt="site miellerie rochefort" title="Le site du cercle apicole de Rochefort">
+                </a>
+              </div>
+              <div class="item" id="img10">
+                <a href="#start" target="_blank">
+                  <img src="img/cv.jpg" alt="site presentation perso" title="Le site sur lequel vous vous trouvez actuellement">
+                </a>
+              </div>
             </div>
+            <a class="left carousel-control" href="#carousel" role="button" data-slide="prev" id="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+               <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel" role="button" data-slide="next" >
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
           <div class="col-lg-6">
             <div class="active" id="text1"><p>Lorem Ipsum 1</p></div>
@@ -127,6 +180,7 @@
             <div class="hide" id="text7"><p>Lorem Ipsum 7</p></div>
             <div class="hide" id="text8"><p>Lorem Ipsum 8</p></div>
             <div class="hide" id="text9"><p>Lorem Ipsum 9</p></div>
+            <div class="hide" id="text10"><p>Lorem Ipsum 10</p></div>
           </div>
         </div>
       </section>

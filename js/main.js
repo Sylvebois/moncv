@@ -208,20 +208,31 @@ function loadForm(nom) {
  */
 function diapo() {
     var nbDiapo = $('#portfolio .carousel .item').length;
-
-    $('.carousel').on('slid.bs.carousel', function(){
-        var tmpId = $('#portfolio .carousel .active').attr('id');
-        tmpId = tmpId.substring(3);
-        
-        if(tmpId === '1') {
-            $('#text'+nbDiapo).addClass('hide');
-        }
-        else {
-            $('#text'+(tmpId-1)).addClass('hide');
-        }
-        
-        $('#text'+tmpId).removeClass('hide');
+    var clicked = false;
+    
+    $('#prev').on('click', function(){
+        clicked = true;
     });
+    
+    $('.carousel').on('slid.bs.carousel', function(){
+        (!clicked)? showText(nbDiapo) : showText(nbDiapo, 'prev');   
+        clicked = false;
+    });
+}
+
+//Affiche le texte adéquat à côté du carrousel
+function showText(nbDiapo, cBouton) {
+    var tmpId = $('#portfolio .carousel .active').attr('id');
+    tmpId = parseInt(tmpId.substring(3));
+    
+    if(cBouton === 'prev'){
+        (tmpId === nbDiapo) ? $('#text1').addClass('hide') : $('#text'+(tmpId+1)).addClass('hide')
+    }
+    else {
+        (tmpId === 1) ? $('#text'+nbDiapo).addClass('hide') : $('#text'+(tmpId-1)).addClass('hide');
+    }
+
+    $('#text'+tmpId).removeClass('hide');
 }
 /*
  * Divers
