@@ -122,7 +122,7 @@ function checkModal() {
             $('#start section div').hide();
             
             //Chargement de la fenêtre
-            $('.modal-dialog').load('./includes/form_accueil.html');
+            $('.modal-dialog').load('./includes/startForm/form_accueil.html');
             $('.modal-dialog').css({
                 'background-color': 'rgb(255,255,255)',
                 'border-radius': '6px',
@@ -135,7 +135,7 @@ function checkModal() {
     }
     
     $('footer a').click(function() {
-        $('.modal-dialog').load('./includes/form_accueil.html');
+        $('.modal-dialog').load('./includes/startForm/form_accueil.html');
     });
     
     manageModal();
@@ -200,40 +200,30 @@ function showResult() {
 //Chargement d'une page dans la fenêtre modale
 function loadForm(nom) {
     $('.modal-dialog').empty();
-    $('.modal-dialog').load('./includes/'+nom+'.html');    
+    $('.modal-dialog').load('./includes/startForm/'+nom+'.html');    
 }
 
 /*
  * Gestion du carrousel
  */
-function diapo() {
-    var nbDiapo = $('#portfolio .carousel .item').length;
-    var clicked = false;
-    
-    $('#prev').on('click', function(){
-        clicked = true;
-    });
+function diapo() {    
+    loadText('text1');
     
     $('.carousel').on('slid.bs.carousel', function(){
-        (!clicked)? showText(nbDiapo) : showText(nbDiapo, 'prev');   
-        clicked = false;
+        var tmpId = $('#portfolio .carousel .active').attr('id');
+        tmpId = tmpId.substring(3);  
+
+        loadText('text'+tmpId);
     });
 }
 
-//Affiche le texte adéquat à côté du carrousel
-function showText(nbDiapo, cBouton) {
-    var tmpId = $('#portfolio .carousel .active').attr('id');
-    tmpId = parseInt(tmpId.substring(3));
-    
-    if(cBouton === 'prev'){
-        (tmpId === nbDiapo) ? $('#text1').addClass('hide') : $('#text'+(tmpId+1)).addClass('hide')
-    }
-    else {
-        (tmpId === 1) ? $('#text'+nbDiapo).addClass('hide') : $('#text'+(tmpId-1)).addClass('hide');
-    }
-
-    $('#text'+tmpId).removeClass('hide');
+//Chargement du texte à côté du carrousel
+function loadText(nom) {
+    alert(nom);
+    $('#textCarousel').empty();
+    $('#textCarousel').load('./includes/carouselText/'+nom+'.html');     
 }
+
 /*
  * Divers
  */
