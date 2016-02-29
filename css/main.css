@@ -17,6 +17,14 @@ form h4 {
     padding-right: 15px;
 }
 
+#textCarousel h3 {
+    text-decoration: underline;
+}
+
+#textCarousel p {
+    font-size: 17px;
+}
+
 /*
  * Positionnement du background pour l'accueil
  */

@@ -153,18 +153,18 @@ function manageModal() {
         loadForm('form_accueil');
     });
     $('#modalForm').on('click','#form2 #formPrev',function(){
-        loadForm('form1')
+        loadForm('form1');
     });  
     $('#modalForm').on('click','#form3 #formPrev',function(){
-        loadForm('form2')
+        loadForm('form2');
     });  
  
     //Suivant
     $('#modalForm').on('click','#form1 #formNext',function(){
-        loadForm('form2')
+        loadForm('form2');
     });
     $('#modalForm').on('click','#form2 #formNext',function(){
-        loadForm('form3')
+        loadForm('form3');
     });
     $('#modalForm').on('click','#form3 #formNext',function(){
         loadForm('form_fin');
@@ -209,6 +209,7 @@ function loadForm(nom) {
 function diapo() {    
     loadText('text1');
     
+    $('.carousel').carousel({interval : 7000});
     $('.carousel').on('slid.bs.carousel', function(){
         var tmpId = $('#portfolio .carousel .active').attr('id');
         tmpId = tmpId.substring(3);  
@@ -219,7 +220,6 @@ function diapo() {
 
 //Chargement du texte à côté du carrousel
 function loadText(nom) {
-    alert(nom);
     $('#textCarousel').empty();
     $('#textCarousel').load('./includes/carouselText/'+nom+'.html');     
 }
