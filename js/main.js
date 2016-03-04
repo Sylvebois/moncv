@@ -116,7 +116,6 @@ function setColor(type, cmp) {
         b = (255-cmp < 39)? 39 : 255-cmp; 
     }
     
-    
     return 'rgb('+r+','+v+','+b+')';
 }
 
