@@ -57,7 +57,7 @@ function svgBasic(w, h){
         line1.setAttribute('y1', 0);
         line1.setAttribute('x2', w);
         line1.setAttribute('y2', i*pasH);
-        line1.setAttribute('stroke', 'rgb(' + randIntIncl(0,100) + ',' + randIntIncl(0,255) + ',' + randIntIncl(0,1) + ')');
+        line1.setAttribute('stroke', setColor(1, i));
         line1.setAttribute('stroke-width',1);
         
         var line2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
@@ -65,7 +65,7 @@ function svgBasic(w, h){
         line2.setAttribute('y1', i*pasH);
         line2.setAttribute('x2', w-(pasW*i));
         line2.setAttribute('y2', 0);
-        line2.setAttribute('stroke', 'rgb(' + randIntIncl(0,255) + ',' + randIntIncl(0,1) + ',' + randIntIncl(0,100) + ')');
+        line2.setAttribute('stroke', setColor(2, i));
         line2.setAttribute('stroke-width',1);
         
         var line3 = document.createElementNS("http://www.w3.org/2000/svg", "line");
@@ -73,7 +73,7 @@ function svgBasic(w, h){
         line3.setAttribute('y1', h-(pasH*i));
         line3.setAttribute('x2', w-(pasW*i));
         line3.setAttribute('y2', h);
-        line3.setAttribute('stroke', 'rgb(' + randIntIncl(0,1) + ',' + randIntIncl(0,100) + ',' + randIntIncl(0,255) + ')');
+        line3.setAttribute('stroke',setColor(4, i));
         line3.setAttribute('stroke-width',1);
                 
         var line4 = document.createElementNS("http://www.w3.org/2000/svg", "line");
@@ -81,7 +81,7 @@ function svgBasic(w, h){
         line4.setAttribute('y1', h);
         line4.setAttribute('x2', w);
         line4.setAttribute('y2', h-(pasH*i));
-        line4.setAttribute('stroke', 'rgb(' + randIntIncl(0,255) + ',' + randIntIncl(0,100) + ',' + randIntIncl(0,1) + ')');
+        line4.setAttribute('stroke', setColor(3, i));
         line4.setAttribute('stroke-width',1);
 
         $('#bg').append(line1);
@@ -90,6 +90,36 @@ function svgBasic(w, h){
         $('#bg').append(line4);
     }  
 }
+
+//crée le dégradé de couleur
+function setColor(type, cmp) {
+    var r,v,b = 0;
+    
+    if (type === 1) {
+        r = 22;
+        v = (150-cmp < 142)? 142 : 150-cmp;
+        b = (cmp > 72)? 72 : cmp;
+    }
+    else if (type === 2) {
+        r = (255-cmp < 194)? 194 : 255-cmp;
+        v = 33;
+        b = (cmp > 39)? 39 : cmp; 
+    }
+    else if (type === 3) {
+        r = (255-cmp < 140)? 140 : 255-cmp;
+        v = (cmp > 106)? 106 : cmp;
+        b = 55; 
+    }
+    else if (type === 4) {
+        r = 194;
+        v = (cmp > 33)? 33 : cmp;
+        b = (255-cmp < 39)? 39 : 255-cmp; 
+    }
+    
+    
+    return 'rgb('+r+','+v+','+b+')';
+}
+
 
 /*
  * Scrollspy fluide
